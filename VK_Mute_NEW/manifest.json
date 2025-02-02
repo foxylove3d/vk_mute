@@ -1,0 +1,28 @@
+﻿{
+  "manifest_version": 3,
+  "name": "VK Mute Extension",
+  "version": "1.0",
+  "description": "Mute selected users' messages on VK.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://vk.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://vk.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "140": "icons/icon140.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "140": "icons/icon140.png",
+    "128": "icons/icon128.png"
+  }
+}
